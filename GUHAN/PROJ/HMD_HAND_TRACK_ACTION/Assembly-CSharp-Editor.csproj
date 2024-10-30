@@ -1213,13 +1213,13 @@
       <Project>{F330A966-7E12-5E17-6685-5EE4C087C97A}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.csproj">
-      <Project>{4DE6D92D-67F7-224C-D7A2-78EB062D9295}</Project>
-      <Name>Unity.XR.Interaction.Toolkit.Samples.Hands</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj">
       <Project>{D0AE964A-25AA-DD15-C51A-1488848914B3}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.csproj">
+      <Project>{4DE6D92D-67F7-224C-D7A2-78EB062D9295}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.Hands</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,1 +1,16 @@
-GUHAN\PROJ\HMD_HAND_TRACK_ACTION\Library\
+#Unity generated
+Builds/
+Temp/
+Library/
+obj/
+GUHAN/PROJ/HMD_HAND_TRACK_ACTION/Library/
+
+#Visual Studio / MonoDevelop generated
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.userprefs
+
+#OS generated
+.DS_Store
