@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3555168356095860658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5823042712209615355}
+  - component: {fileID: 3966793487754844404}
+  m_Layer: 0
+  m_Name: PhantomCreation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5823042712209615355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555168356095860658}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3966793487754844404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555168356095860658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce73a07875efaa04383fcc5c4544309f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalBall: {fileID: 0}
+  ballBody: {fileID: 0}
+  originalLineVector: {fileID: 0}
+  originalVector: {fileID: 0}
+  originalLineVectorX: {fileID: 0}
+  originalVectorX: {fileID: 0}
+  originalLineVectorY: {fileID: 0}
+  originalVectorY: {fileID: 0}
+  originalLineVectorZ: {fileID: 0}
+  originalVectorZ: {fileID: 0}
+  vectorBody: {fileID: 0}
+  vectorBodyX: {fileID: 0}
+  vectorBodyY: {fileID: 0}
+  vectorBodyZ: {fileID: 0}
+  vectorShape: {fileID: 0}
+  vectorShapeX: {fileID: 0}
+  vectorShapeY: {fileID: 0}
+  vectorShapeZ: {fileID: 0}
+  phantomBall: {fileID: 4995555534999399430, guid: a5d2947294a568f40ac337cf24f776b2,
+    type: 3}
+  phantomLineVector: {fileID: 8034359446777022396, guid: b396a95b6dd5fa8418289c187e127cf1,
+    type: 3}
+  phantomHeadVector: {fileID: 6892326420547675672, guid: 2f07f94d05300544aa6386050077889f,
+    type: 3}

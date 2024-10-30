@@ -62,6 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\AnimeteHand.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\PhantomCreation.cs" />
+    <Compile Include="Assets\Scripts\BallMovement.cs" />
+    <Compile Include="Assets\Scripts\VectorComponentMovement.cs" />
+    <Compile Include="Assets\Scripts\VectorScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
