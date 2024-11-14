@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-
-
     public Rigidbody rb;
     public float speed;
     int countFrame;
@@ -16,38 +14,39 @@ public class BallMovement : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //This method helps initialize every variable
+        // Initialize Rigidbody and enable gravity
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = true;
         Debug.Log("The program started");
-        
     }
 
     private void Start()
     {
-        countFrame = 0;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        countFrame++;
+        
     }
 
     private void FixedUpdate()
     {
-        //It is used before any physics calculations
-        //Vector3 movementV = new Vector3(ballMovementVectorX, ballMovementVectorY, ballMovementVectorZ);
-        //rb.AddForce(movementV * speed);
+        // Add a movement force for testing bounce effect if desired
+        Vector3 movementV = new Vector3(ballMovementVectorX, ballMovementVectorY, ballMovementVectorZ);
+            rb.AddForce(movementV * speed);
 
-        
-
-        if (countFrame>=frameLimit) {
-            Debug.Log("Entered the condition2");
-            rb.Sleep();
+        // Optional: Frame limit functionality for disabling the ball
+        if (countFrame >= frameLimit)
+        {
+            Debug.Log("Frame limit reached.");
+            rb.velocity = Vector3.zero;  // Stops movement without sleep
         }
-       
+
+        // Damping force applied against the current velocity
+        rb.velocity *= 0.98f; // Adjust multiplier to control slowdown
+        rb.angularVelocity *= 0.98f;
     }
 
-   
 }

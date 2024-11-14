@@ -1,7 +1,9 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Unity.Mathematics.math;
+using UnityEngine.InputSystem;
+                
 
 public class PhantomCreation : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class PhantomCreation : MonoBehaviour
 
     public GameObject originalBall;
     public Rigidbody ballBody;
-
+    private Transform ballShape;
 
 
     public GameObject originalLineVector;
@@ -39,12 +41,14 @@ public class PhantomCreation : MonoBehaviour
     public GameObject phantomBall;
     public GameObject phantomLineVector;
     public GameObject phantomHeadVector;
+
+    public InputActionProperty CreatePhanthomAction;
     int countFrame;
     void Awake()
     {
 
         Debug.Log("Entered awakePC");
-        countFrame =0;
+        countFrame = 0;
         ballBody = originalBall.GetComponent<Rigidbody>();
         vectorBody = originalVector.GetComponent<Rigidbody>();
         vectorBodyX = originalVectorX.GetComponent<Rigidbody>();
@@ -54,6 +58,7 @@ public class PhantomCreation : MonoBehaviour
 
     private void Start()
     {
+        ballShape = originalBall.GetComponent<Transform>();
         vectorShape = originalLineVector.GetComponent<Transform>();
         vectorShapeX = originalLineVectorX.GetComponent<Transform>();
         vectorShapeY = originalLineVectorY.GetComponent<Transform>();
@@ -63,6 +68,12 @@ public class PhantomCreation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CreatePhanthomAction.action.WasPressedThisFrame())
+        {
+            Debug.Log("The button has been pressed ");
+            createPhanthom();
+        }
+        /*
         countFrame++;
         Debug.Log("Current frame is " + countFrame);
         //It is updated every frame it is used to execut almost everything , before rendering a frame
@@ -87,40 +98,46 @@ public class PhantomCreation : MonoBehaviour
             Debug.Log("Entered the condition3");
             createPhantom();
         }
+        */
 
         
     }
 
-    public void createPhantom()
+    public void createPhanthom()
     {
         //  Debug.Log("Phantom position x " + vectorBody.position.x + " position y " + vectorBody.position.y);
         // Vector3 currentPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
         GameObject _PhantomBall = Instantiate(phantomBall, ballBody.position, ballBody.rotation);
+        _PhantomBall.transform.localScale= ballShape.localScale ;
 
         float ballVectorG =sqrt(ballBody.velocity.x * ballBody.velocity.x + ballBody.velocity.y * ballBody.velocity.y + ballBody.velocity.z * ballBody.velocity.z);
-
+        
 
         GameObject _PhantomLineVector = Instantiate(phantomLineVector, vectorBody.position, vectorBody.rotation);
         GameObject _PhantomHeadVector = Instantiate(phantomHeadVector, vectorBody.position, vectorBody.rotation);
-        _PhantomLineVector.transform.localScale = vectorShape.localScale;
+        _PhantomLineVector.transform.localScale = vectorShape.localScale*0.2f;
+        _PhantomHeadVector.transform.localScale = ballShape.localScale*2;
 
         if (ballBody.velocity.x != 0 && abs(ballBody.velocity.x) != ballVectorG) { 
         GameObject _PhantomLineVectorX = Instantiate(phantomLineVector, vectorBodyX.position, vectorBodyX.rotation);
         GameObject _PhantomHeadVectorX = Instantiate(phantomHeadVector, vectorBodyX.position, vectorBodyX.rotation);
-        _PhantomLineVectorX.transform.localScale = vectorShapeX.localScale;
-    }
+        _PhantomLineVectorX.transform.localScale = vectorShapeX.localScale * 0.2f;
+            _PhantomHeadVectorX.transform.localScale = ballShape.localScale * 2;
+        }
 
         if (ballBody.velocity.y != 0 && abs(ballBody.velocity.y) != ballVectorG)
         {
             GameObject _PhantomLineVectorY = Instantiate(phantomLineVector, vectorBodyY.position, vectorBodyY.rotation);
             GameObject _PhantomHeadVectorY = Instantiate(phantomHeadVector, vectorBodyY.position, vectorBodyY.rotation);
-            _PhantomLineVectorY.transform.localScale = vectorShapeY.localScale;
+            _PhantomLineVectorY.transform.localScale = vectorShapeY.localScale * 0.2f;
+            _PhantomHeadVectorY.transform.localScale = ballShape.localScale * 2;
         }
         if (ballBody.velocity.z != 0 && abs(ballBody.velocity.z) != ballVectorG)
         {
             GameObject _PhantomLineVectorZ = Instantiate(phantomLineVector, vectorBodyZ.position, vectorBodyZ.rotation);
             GameObject _PhantomHeadVectorZ = Instantiate(phantomHeadVector, vectorBodyZ.position, vectorBodyZ.rotation);
-            _PhantomLineVectorZ.transform.localScale = vectorShapeZ.localScale;
+            _PhantomLineVectorZ.transform.localScale = vectorShapeZ.localScale * 0.2f;
+            _PhantomHeadVectorZ.transform.localScale = ballShape.localScale * 2 ;
         }
     }
 }

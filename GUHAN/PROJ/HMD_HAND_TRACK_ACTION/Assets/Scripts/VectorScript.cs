@@ -90,18 +90,22 @@ public class VectorScript : MonoBehaviour
         float reScaleX, reScaleY, reScaleZ;
 
         //Figure the new position of the vector depending on the width and angle of it
-        reScaleX = (cos(horizontalAngle)) * (cos(verticalAnglexy)) * (ballColliderSize.x - 0.5f + vectorLineShape.localScale.z * 5);
+        reScaleX = (cos(horizontalAngle)) * (cos(verticalAnglexy)) * (ballColliderSize.x - 0.05f + vectorLineShape.localScale.z );
+
+
+       // reScaleX = (cos(horizontalAngle)) * (cos(verticalAnglexy)) * (ballColliderSize.x - 0.5f + vectorLineShape.localScale.z * 5); original logic for the ball size 1
+
 
         //Double declaration for Z and Y depending whether there is a velocity in x or not
         if ((ballVectorX) == 0)
         {
-            reScaleZ = (sin(horizontalAngle)) * (cos(verticalAnglezy)) * (ballColliderSize.z - 0.5f + vectorLineShape.localScale.z * 5);
-            reScaleY = sin(verticalAnglezy) * (ballColliderSize.y - 0.5f + vectorLineShape.localScale.z * 5);
+            reScaleZ = (sin(horizontalAngle)) * (cos(verticalAnglezy)) * (ballColliderSize.z - 0.05f + vectorLineShape.localScale.z );
+            reScaleY = sin(verticalAnglezy) * (ballColliderSize.y - 0.05f + vectorLineShape.localScale.z);
         }
         else
         {
-            reScaleZ = (sin(horizontalAngle)) * (cos(verticalAnglexy)) * (ballColliderSize.z - 0.5f + vectorLineShape.localScale.z * 5);
-            reScaleY = sin(verticalAnglexy) * (ballColliderSize.y - 0.5f + vectorLineShape.localScale.z * 5);
+            reScaleZ = (sin(horizontalAngle)) * (cos(verticalAnglexy)) * (ballColliderSize.z - 0.05f + vectorLineShape.localScale.z );
+            reScaleY = sin(verticalAnglexy) * (ballColliderSize.y - 0.05f + vectorLineShape.localScale.z );
         }
 
         horizontalAngle = horizontalAngle * Mathf.Rad2Deg;

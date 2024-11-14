@@ -64,7 +64,9 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\PhantomCreation.cs" />
     <Compile Include="Assets\Scripts\BallMovement.cs" />
+    <Compile Include="Assets\XRAlyxGrabInteractable.cs" />
     <Compile Include="Assets\Scripts\VectorComponentMovement.cs" />
+    <Compile Include="Assets\PullGrabXRInteractable.cs" />
     <Compile Include="Assets\Scripts\VectorScript.cs" />
   </ItemGroup>
   <ItemGroup>

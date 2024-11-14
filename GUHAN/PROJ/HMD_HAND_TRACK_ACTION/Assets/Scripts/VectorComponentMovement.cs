@@ -68,15 +68,16 @@ public class VectorComponentMovement : MonoBehaviour
         switch (componentId) {
             case 0:
                 ballVector = ballVectorX;
-                reScale = (ballColliderSize.x - 0.5f + vectorLineShape.localScale.z * 5);
+                reScale = (ballColliderSize.x - 0.05f + vectorLineShape.localScale.z );
                 break;
             case 1:
                 ballVector = ballVectorY;
-                reScale = (ballColliderSize.y - 0.5f + vectorLineShape.localScale.z * 5);
+                reScale = (ballColliderSize.y - 0.05f + vectorLineShape.localScale.z );
                 break;
             case 2:
                 ballVector = ballVectorZ;
-                reScale = (ballColliderSize.z - 0.5f + vectorLineShape.localScale.z * 5);
+                reScale = (ballColliderSize.z - 0.05f + vectorLineShape.localScale.z );
+                //reScale = (ballColliderSize.z - 0.5f + vectorLineShape.localScale.z * 5); original logic for ball size 1
                 break;
 
         }
@@ -86,13 +87,14 @@ public class VectorComponentMovement : MonoBehaviour
             ballVector=0;
         }
 
+        /*
         if (ballVector == 0)
         {
             vectorGameObject.SetActive(false);
         }
         else {
             vectorGameObject.SetActive(true);
-        }
+        }*/
 
             vectorLineShape.localScale = new Vector3(0.1f, 0.1f, 0.1f * abs(ballVector));
 
